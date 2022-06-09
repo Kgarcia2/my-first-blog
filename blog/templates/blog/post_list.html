@@ -1,3 +1,4 @@
+
 <html>
     <head>
         <title>El blog del KvN</title>
@@ -7,16 +8,12 @@
             <h1><a href="/">El blog del KvN</a></h1>
         </div>
 
-        <div>
-            <p>publicado: 08.06.2022, 16:56</p>
-            <h2><a href="">Mi primer post</a></h2>
-            <p>Está destinado ha describir lo malo que es el Pere en todos lo putísioms vídeojuegos</p>
-        </div>
-
-        <div>
-            <p>publicado: 08.06.2022, 16:58</p>
-            <h2><a href="">Mi segundo post</a></h2>
-            <p>Está destinado ha las vivencias de dos leyendas, Consigüi & Jasigüi</p>
-        </div>
+        {% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
